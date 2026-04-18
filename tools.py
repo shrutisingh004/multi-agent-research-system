@@ -24,7 +24,7 @@ def web_search(query: str) -> str:
     
     return "\n\n".join(results_list)
 
-print(web_search.invoke("What is the recent news of war?"))
+# print(web_search.invoke("What is the recent news of war?"))
 
 # Tool 2: Web Scraping using BeautifulSoup
 @tool
@@ -42,4 +42,4 @@ def scrape_url(url: str) -> str:
     except Exception as e:
         return f"Error scraping URL: {str(e)}"
     
-print(scrape_url.invoke("https://www.bbc.com/news/live/c3w378e6dnlt?page=3"))
+# print(scrape_url.invoke("https://www.bbc.com/news/live/c3w378e6dnlt?page=3"))
