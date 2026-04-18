@@ -100,7 +100,7 @@ researchmind/
 ### 1 · Clone the repo
 
 ```bash
-git clone [https://github.com/yourusername/researchmind.git](https://github.com/shrutisingh004/multi-agent-research-system.git)
+git clone https://github.com/shrutisingh004/multi-agent-research-system.git
 cd multi-agent-research-system
 ```
 
