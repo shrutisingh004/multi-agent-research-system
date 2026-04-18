@@ -81,7 +81,7 @@ A second Gemini chain that reviews the report like a harsh editor — scores it 
 ## Project Structure
 
 ```
-researchmind/
+multi-agent-research-system/
 │
 ├── app.py               # Streamlit UI — pipeline orchestration & display
 ├── agents.py            # Agent & chain definitions (Search, Reader, Writer, Critic)
