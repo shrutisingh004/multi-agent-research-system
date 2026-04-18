@@ -1,0 +1,33 @@
+# Core LangChain ecosystem
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+
+# Gemini API
+google-generativeai
+
+# DuckDuckGo search (Search Agent)
+ddgs
+
+# Web scraping (Reader Agent)
+beautifulsoup4
+requests
+lxml
+
+# Async support (recommended for multi-agent systems)
+aiohttp
+
+# Environment variables
+python-dotenv
+
+# UI
+streamlit
+
+# Data handling
+pandas
+
+# Utilities
+pydantic
+tqdm
+ipython
