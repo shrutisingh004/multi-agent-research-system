@@ -29,6 +29,20 @@ Agents communicate through a shared state, enabling a scalable and extensible wo
 
 ---
 
+## Project Architecture
+```bash
+multi-agent-research-system/
+│
+├── app.py
+├── pipeline.py
+├── tools.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+---
+
 ## System Architecture
 
 User Query  
@@ -73,7 +87,7 @@ streamlit run app.py
 
 ---
 
-# Example Use Case
+## Example Use Case
 
 Input:
 ```bash
@@ -87,7 +101,7 @@ Output:
 
 ---
 
-# Key Highlights
+## Key Highlights
 
 - Processes multiple web sources per query
 - Automates end-to-end research workflow
@@ -96,7 +110,7 @@ Output:
 
 ---
 
-# Limitations
+## Limitations
 
 - Dependent on availability and quality of web sources
 - LLM responses may vary based on prompt design
@@ -104,7 +118,7 @@ Output:
 
 ---
 
-# Future Work
+## Future Work
 
 - Add result ranking and filtering mechanisms
 - Introduce caching to reduce redundant API calls
