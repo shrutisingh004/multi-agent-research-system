@@ -1,128 +1,198 @@
-# Multi-Agent AI Research System
+<div align="center">
 
-An end-to-end multi-agent system that automates research workflows by combining real-time web search, content extraction, and LLM-based report generation.
+```
+██████╗ ███████╗███████╗███████╗ █████╗ ██████╗  ██████╗██╗  ██╗
+██╔══██╗██╔════╝██╔════╝██╔════╝██╔══██╗██╔══██╗██╔════╝██║  ██║
+██████╔╝█████╗  ███████╗█████╗  ███████║██████╔╝██║     ███████║
+██╔══██╗██╔══╝  ╚════██║██╔══╝  ██╔══██║██╔══██╗██║     ██╔══██║
+██║  ██║███████╗███████║███████╗██║  ██║██║  ██║╚██████╗██║  ██║
+╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
+                                                    M I N D
+```
 
-The system uses LangChain to orchestrate multiple specialized agents that collaboratively retrieve, process, and synthesize information into structured outputs.
+### *Four AI agents. One research report. ~10 seconds.*
 
-**Live Demo** : https://shrutis-multi-agent-research.streamlit.app/
+<br/>
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![LangChain](https://img.shields.io/badge/LangChain-latest-1C3C3C?style=flat-square&logo=langchain&logoColor=white)](https://langchain.com)
+[![LangGraph](https://img.shields.io/badge/LangGraph-latest-FF6B35?style=flat-square)](https://langchain-ai.github.io/langgraph/)
+[![Gemini](https://img.shields.io/badge/Gemini_2.5_Flash-Google-4285F4?style=flat-square&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-deployed-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
+<br/>
+
+<img src="assets/screenshot.png" alt="ResearchMind UI" width="100%" style="border-radius: 12px;" />
+
+<br/>
+<br/>
+
+</div>
 
 ---
 
-## Overview
+## ✦ What is ResearchMind?
 
-This project implements a modular multi-agent architecture where each agent is responsible for a specific stage in the research pipeline:
+**ResearchMind** is a multi-agent AI system that autonomously researches any topic on the web and produces a structured, critic-reviewed report — in roughly 10 seconds.
 
-- `Search Agent`: Retrieves relevant web results using DuckDuckGo  
-- `Reader Agent`: Extracts and cleans content from web pages  
-- `Writer Agent`: Generates structured research reports  
-- `Critic Agent`: Evaluates and refines the generated output  
+You type a topic. Four specialized agents take over:
 
-Agents communicate through a shared state, enabling a scalable and extensible workflow.
+```
+  You  ──▶  Search Agent  ──▶  Reader Agent  ──▶  Writer Chain  ──▶  Critic Chain  ──▶  Report
+             (DuckDuckGo)      (BeautifulSoup)      (Gemini LLM)        (Gemini LLM)
+```
 
----
-
-## Tech Stack
-
-- LangChain – Agent orchestration  
-- DuckDuckGo (DDGS) – Web search  
-- BeautifulSoup and Requests – Web scraping  
-- Google Gemini API – Language model for generation and evaluation  
-- Streamlit – User interface  
+No manual browsing. No copy-pasting. Just research.
 
 ---
 
-## Project Architecture
-```bash
-multi-agent-research-system/
+## ✦ The Pipeline
+
+### `01` · Search Agent
+Queries DuckDuckGo for the 5 most relevant, recent results on your topic. Returns titles, URLs, and content snippets.
+
+### `02` · Reader Agent
+Picks the most relevant URL from the search results and deep-scrapes it using BeautifulSoup — stripping nav, scripts, and noise to extract clean, dense content.
+
+### `03` · Writer Chain
+A Gemini-powered chain that synthesizes the search results + scraped content into a full structured report with an Introduction, Key Findings, Conclusion, and Sources.
+
+### `04` · Critic Chain
+A second Gemini chain that reviews the report like a harsh editor — scores it out of 10, highlights strengths, flags weaknesses, and delivers a one-line verdict.
+
+---
+
+## ✦ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **LLM** | Google Gemini 2.5 Flash |
+| **Agent Framework** | LangGraph (`create_react_agent`) |
+| **Chains & Prompts** | LangChain Core |
+| **Web Search** | DuckDuckGo Search (`ddgs`) |
+| **Web Scraping** | BeautifulSoup4 + Requests |
+| **UI** | Streamlit |
+| **Config** | python-dotenv / Streamlit Secrets |
+
+---
+
+## ✦ Project Structure
+
+```
+researchmind/
 │
-├── app.py
-├── pipeline.py
-├── tools.py
-├── requirements.txt
-├── README.md
-└── .gitignore
+├── app.py               # Streamlit UI — pipeline orchestration & display
+├── agents.py            # Agent & chain definitions (Search, Reader, Writer, Critic)
+├── pipeline.py          # CLI pipeline runner (run without UI)
+├── tools.py             # LangChain tools: web_search, scrape_url
+├── requirements.txt     # Dependencies
+├── assets/
+│   └── screenshot.png   # UI screenshot (used in README)
+└── .env                 # API keys (not committed)
 ```
 
 ---
 
-## System Architecture
+## ✦ Getting Started
 
-User Query  
-→ Search Agent  
-→ Reader Agent  
-→ Writer Agent  
-→ Critic Agent  
-→ Final Output  
+### 1 · Clone the repo
 
----
-
-## Features
-
-- Multi-agent architecture for task decomposition  
-- Real-time information retrieval using DuckDuckGo  
-- Automated report generation using LLMs  
-- Modular pipeline design for extensibility  
-- Interactive Streamlit interface  
-
----
-
-## Setup Instructions
-
-### 1. Clone the repository
 ```bash
-git clone https://github.com/shrutisingh004/multi-agent-research-system.git
-cd multi-agent-research-system
+git clone https://github.com/yourusername/researchmind.git
+cd researchmind
 ```
-### 2. Install dependencies
+
+### 2 · Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
-### 3. Configure environment variables
-Create a .env file:
-```bash
-GOOGLE_API_KEY=your_api_key_here
+
+### 3 · Set your API key
+
+Create a `.env` file in the root:
+
+```env
+GOOGLE_API_KEY=your_gemini_api_key_here
 ```
-### 4. Run the application
+
+> Get a free Gemini API key at [aistudio.google.com](https://aistudio.google.com)
+
+### 4 · Run the app
+
 ```bash
 streamlit run app.py
 ```
 
----
+Or run it in the terminal without the UI:
 
-## Example Use Case
-
-Input:
 ```bash
-Latest advancements in artificial intelligence
+python pipeline.py
 ```
-Output:
-
-- Aggregated insights from multiple sources
-- Structured research summary
-- Evaluated and refined response
 
 ---
 
-## Key Highlights
+## ✦ Streamlit Cloud Deployment
 
-- Processes multiple web sources per query
-- Automates end-to-end research workflow
-- Demonstrates agent-based system design
-- Combines retrieval and reasoning in a unified pipeline
+1. Push your repo to GitHub
+2. Go to [share.streamlit.io](https://share.streamlit.io) and connect your repo
+3. In **Settings → Secrets**, add:
 
----
+```toml
+GOOGLE_API_KEY = "your_gemini_api_key_here"
+```
 
-## Limitations
-
-- Dependent on availability and quality of web sources
-- LLM responses may vary based on prompt design
-- Scraping may fail on certain websites
+4. Deploy ✦
 
 ---
 
-## Future Work
+## ✦ Example Output
 
-- Add result ranking and filtering mechanisms
-- Introduce caching to reduce redundant API calls
-- Optimize pipeline latency and parallel execution
-- Enhance evaluation metrics for output quality
+```
+Topic: "Breakthroughs in fusion energy 2025"
+
+────────────────────────────────────────
+  FINAL REPORT
+────────────────────────────────────────
+  1. Introduction
+     Fusion energy has seen remarkable progress in 2025...
+
+  2. Key Findings
+     ▸ NIF achieved a second consecutive ignition milestone...
+     ▸ Commonwealth Fusion's SPARC magnet hit record field strength...
+     ▸ Private investment in fusion surpassed $10B globally...
+
+  3. Conclusion
+     The path to commercial fusion is narrowing rapidly...
+
+  4. Sources
+     • https://science.org/...
+     • https://nature.com/...
+
+────────────────────────────────────────
+  CRITIC SCORE: 8/10
+  "Comprehensive and well-sourced — minor gaps in policy context."
+────────────────────────────────────────
+```
+
+---
+
+## ✦ Architecture Decisions
+
+**Why LangGraph over vanilla LangChain agents?**
+LangGraph's `create_react_agent` gives fine-grained control over the tool-calling loop, making agents more reliable and debuggable than legacy `AgentExecutor`.
+
+**Why two separate chains for Writer and Critic?**
+Separation of concerns. The Critic needs to evaluate the report without being biased by the writing context — a clean prompt boundary produces more honest scores.
+
+**Why Gemini 2.5 Flash?**
+Best-in-class speed-to-quality ratio for agentic tasks. Handles long scraped content well and is free-tier friendly for experimentation.
+
+---
+
+<div align="center">
+
+*Built with LangChain · LangGraph · Google Gemini · Streamlit*
+
+</div>
