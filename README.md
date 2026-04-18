@@ -4,6 +4,8 @@ An end-to-end multi-agent system that automates research workflows by combining 
 
 The system uses LangChain to orchestrate multiple specialized agents that collaboratively retrieve, process, and synthesize information into structured outputs.
 
+**Live Demo** : https://shrutis-multi-agent-research.streamlit.app/
+
 ---
 
 ## Overview
