@@ -35,7 +35,7 @@
 
 ## ✦ What is ResearchMind?
 
-**ResearchMind** is a multi-agent AI system that autonomously researches any topic on the web and produces a structured, critic-reviewed report — in roughly 10 seconds.
+**ResearchMind** is a multi-agent AI system that autonomously researches any topic on the web and produces a structured, critic-reviewed report.
 
 You type a topic. Four specialized agents take over:
 
@@ -100,8 +100,8 @@ researchmind/
 ### 1 · Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/researchmind.git
-cd researchmind
+git clone [https://github.com/yourusername/researchmind.git](https://github.com/shrutisingh004/multi-agent-research-system.git)
+cd multi-agent-research-system
 ```
 
 ### 2 · Install dependencies
@@ -115,7 +115,7 @@ pip install -r requirements.txt
 Create a `.env` file in the root:
 
 ```env
-GOOGLE_API_KEY=your_gemini_api_key_here
+GOOGLE_API_KEY = your_gemini_api_key_here
 ```
 
 > Get a free Gemini API key at [aistudio.google.com](https://aistudio.google.com)
