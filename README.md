@@ -80,9 +80,10 @@ Input:
 Latest advancements in artificial intelligence
 ```
 Output:
--Aggregated insights from multiple sources
--Structured research summary
--Evaluated and refined response
+
+- Aggregated insights from multiple sources
+- Structured research summary
+- Evaluated and refined response
 
 ---
 
