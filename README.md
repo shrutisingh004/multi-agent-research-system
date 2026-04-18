@@ -194,12 +194,6 @@ Best-in-class speed-to-quality ratio for agentic tasks. Handles long scraped con
 
 ---
 
-## ✦ License
-
-This project is currently unlicensed. All rights reserved by the author. Please do not copy, distribute, or use this code without explicit permission.
-
----
-
 <div align="center">
 
 *Built with LangChain · LangGraph · Google Gemini · Streamlit*
