@@ -18,12 +18,13 @@
 [![LangChain](https://img.shields.io/badge/LangChain-latest-1C3C3C?style=flat-square&logo=langchain&logoColor=white)](https://langchain.com)
 [![LangGraph](https://img.shields.io/badge/LangGraph-latest-FF6B35?style=flat-square)](https://langchain-ai.github.io/langgraph/)
 [![Gemini](https://img.shields.io/badge/Gemini_2.5_Flash-Google-4285F4?style=flat-square&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-deployed-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Live_Demo-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://shrutis-multi-agent-research.streamlit.app/)
 
 <br/>
 
 <img src="assets/screenshot.png" alt="ResearchMind UI" width="100%" style="border-radius: 12px;" />
+
+### 🔗 [**Try the live demo →**](https://shrutis-multi-agent-research.streamlit.app/)
 
 <br/>
 <br/>
@@ -145,6 +146,8 @@ GOOGLE_API_KEY = "your_gemini_api_key_here"
 
 4. Deploy ✦
 
+> **Live app:** [shrutis-multi-agent-research.streamlit.app](https://shrutis-multi-agent-research.streamlit.app/)
+
 ---
 
 ## ✦ Example Output
@@ -188,6 +191,12 @@ Separation of concerns. The Critic needs to evaluate the report without being bi
 
 **Why Gemini 2.5 Flash?**
 Best-in-class speed-to-quality ratio for agentic tasks. Handles long scraped content well and is free-tier friendly for experimentation.
+
+---
+
+## ✦ License
+
+This project is currently unlicensed. All rights reserved by the author. Please do not copy, distribute, or use this code without explicit permission.
 
 ---
 
