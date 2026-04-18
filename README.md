@@ -33,7 +33,7 @@
 
 ---
 
-## ✦ What is ResearchMind?
+## What is ResearchMind?
 
 **ResearchMind** is a multi-agent AI system that autonomously researches any topic on the web and produces a structured, critic-reviewed report.
 
@@ -48,7 +48,7 @@ No manual browsing. No copy-pasting. Just research.
 
 ---
 
-## ✦ The Pipeline
+## The Pipeline
 
 ### `01` · Search Agent
 Queries DuckDuckGo for the 5 most relevant, recent results on your topic. Returns titles, URLs, and content snippets.
@@ -64,7 +64,7 @@ A second Gemini chain that reviews the report like a harsh editor — scores it 
 
 ---
 
-## ✦ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -78,7 +78,7 @@ A second Gemini chain that reviews the report like a harsh editor — scores it 
 
 ---
 
-## ✦ Project Structure
+## Project Structure
 
 ```
 researchmind/
@@ -95,7 +95,7 @@ researchmind/
 
 ---
 
-## ✦ Getting Started
+## Getting Started
 
 ### 1 · Clone the repo
 
@@ -134,7 +134,7 @@ python pipeline.py
 
 ---
 
-## ✦ Streamlit Cloud Deployment
+## Streamlit Cloud Deployment
 
 1. Push your repo to GitHub
 2. Go to [share.streamlit.io](https://share.streamlit.io) and connect your repo
@@ -144,13 +144,13 @@ python pipeline.py
 GOOGLE_API_KEY = "your_gemini_api_key_here"
 ```
 
-4. Deploy ✦
+4. Deploy
 
 > **Live app:** [shrutis-multi-agent-research.streamlit.app](https://shrutis-multi-agent-research.streamlit.app/)
 
 ---
 
-## ✦ Example Output
+## Example Output
 
 ```
 Topic: "Breakthroughs in fusion energy 2025"
@@ -181,7 +181,7 @@ Topic: "Breakthroughs in fusion energy 2025"
 
 ---
 
-## ✦ Architecture Decisions
+## Architecture Decisions
 
 **Why LangGraph over vanilla LangChain agents?**
 LangGraph's `create_react_agent` gives fine-grained control over the tool-calling loop, making agents more reliable and debuggable than legacy `AgentExecutor`.
