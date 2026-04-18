@@ -24,7 +24,7 @@
 
 <img src="assets/screenshot.png" alt="ResearchMind UI" width="100%" style="border-radius: 12px;" />
 
-### 🔗 [**Try the live demo →**](https://shrutis-multi-agent-research.streamlit.app/)
+### 🔗 [**Try the live demo →**](https://llm-semantic-book-recommender.streamlit.app/)
 
 <br/>
 <br/>
