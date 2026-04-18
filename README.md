@@ -54,7 +54,7 @@ User Query
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/multi-agent-research-system.git
+git clone https://github.com/shrutisingh004/multi-agent-research-system.git
 cd multi-agent-research-system
 ```
 ### 2. Install dependencies
