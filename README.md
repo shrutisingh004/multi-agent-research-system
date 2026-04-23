@@ -10,7 +10,7 @@
                                                     M I N D
 </pre>
 
-### *Four AI agents. One research report. ~10 seconds.*
+### *Four AI agents. One research report. ~30 seconds.*
 
 <br/>
 
